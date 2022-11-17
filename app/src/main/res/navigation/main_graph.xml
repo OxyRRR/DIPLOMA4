@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_graph"
+    app:startDestination="@id/menuFragment">
+
+    <fragment
+        android:id="@+id/menuFragment"
+        android:name="com.example.photosmine.MenuFragment"
+        android:label="fragment_menu"
+        tools:layout="@layout/fragment_menu" >
+        <action
+            android:id="@+id/action_menuFragment_to_myPhotoFragment"
+            app:destination="@id/myPhotoFragment" />
+        <action
+            android:id="@+id/action_menuFragment_to_photosFragment"
+            app:destination="@id/photosFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/myPhotoFragment"
+        android:name="com.example.photosmine.MyPhotoFragment"
+        android:label="fragment_my_photo"
+        tools:layout="@layout/fragment_my_photo" >
+        <action
+            android:id="@+id/action_myPhotoFragment_to_mainActivity"
+            app:destination="@id/mainActivity" />
+        <action
+            android:id="@+id/action_myPhotoFragment_to_addPhotoFragment"
+            app:destination="@id/addPhotoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/photosFragment"
+        android:name="com.example.photosmine.PhotosFragment"
+        android:label="fragment_photos"
+        tools:layout="@layout/fragment_photos" >
+        <action
+            android:id="@+id/action_photosFragment_to_placeholder"
+            app:destination="@id/mainActivity" />
+    </fragment>
+    <activity
+        android:id="@+id/mainActivity"
+        android:name="com.example.photosmine.MainActivity"
+        android:label="activity_main"
+        tools:layout="@layout/activity_main"/>
+    <fragment
+        android:id="@+id/addPhotoFragment"
+        android:name="com.example.photosmine.AddPhotoFragment"
+        android:label="fragment_add_photo"
+        tools:layout="@layout/fragment_add_photo" >
+        <action
+            android:id="@+id/action_addPhotoFragment_to_addPhotoFragment2"
+            app:destination="@id/addPhotoFragment2" />
+    </fragment>
+    <fragment
+        android:id="@+id/addPhotoFragment2"
+        android:name="com.example.photosmine.AddPhotoFragment2"
+        android:label="fragment_add_photo2"
+        tools:layout="@layout/fragment_add_photo2" >
+        <action
+            android:id="@+id/action_addPhotoFragment2_to_addPhotoFragment"
+            app:destination="@id/addPhotoFragment" />
+    </fragment>
+</navigation>
